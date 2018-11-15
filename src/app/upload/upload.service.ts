@@ -5,11 +5,24 @@ import { Observable } from 'rxjs';
 import { interval, timer } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-const url = 'http://localhost:3000/upload';
+const urlUpload = 'http://localhost:3000/upload';
+const urlFiles = 'http://localhost:3000/admin/files';
 
 @Injectable()
 export class UploadService {
+  public objects: string[] = [];
+
   constructor(private http: HttpClient) {}
+
+  public getFilesList() {
+    this.objects = [...this.objects, 'bbb'];
+
+    // this.http.get<string[]>(urlFiles).subscribe(data => this.objects = data);
+  }
+
+  public download() {
+
+  }
 
   public upload(files: Set<File>): { [key: string]: Observable<number> } {
     // this will be the our resulting map
@@ -22,8 +35,7 @@ export class UploadService {
 
       // create a http-post request and pass the form
       // tell it to report the upload progress
-      debugger;
-      const req = new HttpRequest('POST', url, formData, {
+      const req = new HttpRequest('POST', urlUpload, formData, {
         reportProgress: true
       });
 
@@ -42,6 +54,7 @@ const subscribe = example.subscribe(val => {
   progress.next(val * 10);
   if (val === 10) {
   progress.complete();
+  this.getFilesList();
   }
 });
 

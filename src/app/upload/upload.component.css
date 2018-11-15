@@ -1,5 +1,6 @@
 .btn-upload {
   border-radius: 100px;
+  margin-bottom: 200px;
 }
 
 .upload-text {
@@ -82,13 +83,15 @@
   align-items: center;
 }
 .file-container__icon {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 26px;
   margin: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .file-container__name {
-  width: 572px;
+  width: 542px;
   font-family: OpenSans;
   font-size: 18px;
   font-weight: normal;
@@ -101,4 +104,8 @@
 
 .download-img {
   cursor: pointer;
+}
+
+.file-container__download {
+  margin-right: 20px;
 }
