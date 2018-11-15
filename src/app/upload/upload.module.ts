@@ -7,11 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { UploadService } from './upload.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { DownloadManagerComponent } from './download-manager/download-manager.component';
+import {FormsModule} from '@angular/forms';
 @NgModule({
-  imports: [CommonModule, MatButtonModule,
+  imports: [CommonModule, MatButtonModule, FormsModule,
      MatDialogModule, MatListModule, FlexLayoutModule, HttpClientModule, BrowserAnimationsModule, MatProgressBarModule],
-  declarations: [UploadComponent, DialogComponent],
+  declarations: [UploadComponent, DialogComponent, DownloadManagerComponent],
   exports: [UploadComponent],
   entryComponents: [DialogComponent], // Add the DialogComponent as entry component
   providers: [UploadService]

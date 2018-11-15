@@ -22,6 +22,7 @@ export class UploadService {
 
       // create a http-post request and pass the form
       // tell it to report the upload progress
+      debugger;
       const req = new HttpRequest('POST', url, formData, {
         reportProgress: true
       });
